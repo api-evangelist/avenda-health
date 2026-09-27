@@ -1,23 +1,76 @@
 aid: avenda-health
+
 name: Avenda Health
-description: 'Avenda Health is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Avenda Health is a privately held healthcare technology company founded in 2017 and based in Culver City, California. It focuses
+  on AI‑driven cancer detection solutions, notably its FDA‑cleared Unfold AI platform that helps oncologists identify invisible cancers, improving
+  treatment outcomes and patient quality of life. The company employs 11‑50 staff and aims to build a world where no patient dies of cancer.
+
 url: https://raw.githubusercontent.com/api-evangelist/avenda-health/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Healthcare
+- AI
+- Oncology
+- Technology
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/avenda-health-hosts.yml
+- type: DomainSecurity
+  url: security/avenda-health-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.avendahealth.com/
+
+apis:
+- name: Avenda Health API
+  description: Avenda Health provides healthcare data services.
+  humanURL: https://www.avendahealth.com
+  properties: []
+  aid: avenda-health:avenda-health-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI, AsyncAPI, GraphQL, or other machine‑readable contract discovered despite probing known API hosts.
+  evidence:
+  - url: https://api.avendahealth.com/openapi.json
+    status: 403
+  - url: https://api.avendahealth.com/openapi.yaml
+    status: 403
+  - url: https://api.avendahealth.com/swagger.json
+    status: 403
+  - url: https://api.avendahealth.com/v1/openapi.json
+    status: 403
+  - url: https://api.avendahealth.com/api-docs
+    status: 403
+  - url: https://api.avendahealth.com/docs
+    status: 403
+  - url: https://api.avendahealth.com/redoc
+    status: 403
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
